@@ -55,13 +55,27 @@ NovaRetail/
 ### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/yourusername/nova-retail.git
 cd nova-retail
+
+# Create and activate Virtual environment
 python -m venv venv               # Create virtual environment
 source venv/bin/activate          # Linux/macOS
 venv\Scripts\activate           # Windows
+
+# Upgrade pip and install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
+
+# Install MongoDB if not already installed
+Follow instructions at: https://www.mongodb.com/docs/manual/installation/
+Run server and create database to store
+
+# Run scripts
+python scripts/Data_generation.py       # Creates required folders, also can make tweaks for better data
+Execute pipeline.ipynb and after that analysis.ipynb
+
 ```
 Configuration
 
@@ -91,6 +105,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

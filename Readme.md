@@ -1,77 +1,92 @@
-Nova Retail Analytics Pipeline
+# 📊 Nova Retail Analytics Pipeline
 
-Project Overview
+A **retail analytics pipeline** built with **PySpark** and **MongoDB**, designed to process and analyze sales, customer, and stock data. Supports **daily sales aggregation**, **moving average computations**, **RFM scoring**, and **stock-out risk detection**.
 
-This project demonstrates a retail data analytics pipeline using PySpark and MongoDB. It processes curated datasets for sales, customers, and stock, computes customer RFM scores, daily item-store sales, moving averages, and stock-out risk signals, and serves actionable insights through MongoDB queries.
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![PySpark](https://img.shields.io/badge/PySpark-3.5.2-orange.svg)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Features
+---
 
-Data Ingestion & Curation
+## 🚀 Features
 
-Curates sales, customer, and stock data.
+### 💡 Data Processing
+- Curates **sales, customer, and stock datasets**.
+- Stores processed datasets in **MongoDB collections**.
+- Efficient **PySpark transformations** with **caching, partitioning, and broadcast joins**.
 
-Stores curated datasets in MongoDB collections:
+### 📊 Customer Analytics
+- Computes **Recency, Frequency, Monetary (RFM) scores**.
+- Generates **RFM total score** for actionable insights.
+- Identifies **top customers likely to respond to promotions**.
 
-daily_sales
+### 🛒 Sales Analytics
+- Computes **daily item-store sales**.
+- Calculates **moving average demand** per SKU.
+- Identifies **fast-moving SKUs**.
 
-customers_curated
+### 📦 Stock Analytics
+- Detects **stock-out risks** for inventory management.
+- Highlights **at-risk SKUs by store**.
 
-Stock_risk_signal
+---
 
-Customer Analysis
+## 📂 Project Structure
+NovaRetail/
+├── scripts/
+│ ├── data_generation.py # Script to generate or tweak input data
+│ ├── pipeline.ipynb # PySpark data processing and curation
+│ └── analysis.ipynb # Analysis and insights notebook
+├── config.yaml # Paths, MongoDB URI, and thresholds
+├── requirements.txt # Python dependencies
+└── data/ # Raw and curated CSV/Parquet files
+---
 
-Computes Recency, Frequency, Monetary (RFM) scores.
+## ⚙️ Getting Started
 
-Assigns RFM score (1-4) and combined RFM total score.
+### Prerequisites
+- Python 3.10+
+- PySpark 3.5.2
+- MongoDB 4.7+
+- Pandas, PyYAML
 
-Identifies top customers likely to respond to promotions.
+### Installation
 
-Sales Analysis
-
-Computes daily item-store sales.
-
-Calculates moving average demand per SKU.
-
-Supports top SKU queries.
-
-Stock Analysis
-
-Computes stock-out risk signals.
-
-Identifies fast-moving SKUs by store and globally.
-
-Performance Optimization
-
-Uses PySpark caching, partitioning, and broadcast joins for efficiency.
-
-Setup & Installation
-
-Clone the repository
-
-git clone <your-repo-url>
-cd NovaRetail
-
-
-Create a new virtual environment
-
-# Linux / macOS
-python3 -m venv venv
-source venv/bin/activate
-
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-
-Install dependencies
-
+```bash
+git clone https://github.com/yourusername/nova-retail.git
+cd nova-retail
+python -m venv venv               # Create virtual environment
+source venv/bin/activate          # Linux/macOS
+# venv\Scripts\activate           # Windows
 pip install --upgrade pip
 pip install -r requirements.txt
 
-NovaRetail/
-│
-├─ pipeline.ipynb          # PySpark data processing pipeline
-├─ serving.ipynb           # MongoDB queries & actionable insights
-├─ config.yaml             # Config file for paths, DB URI, thresholds
-├─ requirements.txt        # Project dependencies
-└─ data/                   # Raw and curated data (CSV/Parquet)
+Configuration
+
+Update config.yaml with your local paths and MongoDB URI.
+
+Ensure the collections (daily_sales, customers_curated, Stock_risk_signal) exist in your database.
+
+Running the Pipeline
+
+Open pipeline.ipynb to process raw data and curate datasets.
+
+Processed data is saved to MongoDB for analytics and reporting.
+
+Use PySpark caching and partitioning for optimal performance.
+
+⚠️ Notes
+
+Run in a fresh virtual environment to avoid dependency conflicts.
+
+config.yaml contains sensitive info — do not commit publicly.
+
+Optimized for fast, large-scale retail analytics.
+
+👤 Author
+
+Prabin Shrestha – Data Science & Big Data Enthusiast
+Email: pravinxtha123@gmail.com
+
+

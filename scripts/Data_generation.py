@@ -37,7 +37,7 @@ for day in range(num_days):
                 unit_price = base_prices[sku_id] * random.uniform(0.9, 1.1)
                 price = unit_price * quantity
                 sales_data.append({
-                    "txn_id": f"T{random.randint(10000,99999)}",
+                    "txn_id": f"T{random.randint(100,999)}",
                     "date": date,
                     "sku_id": sku_id,
                     "store_id": store_id,
@@ -92,7 +92,7 @@ for day in range(num_days):
                     "timestamp": ts,
                     "store_id": store_id,
                     "sku_id": sku_id,
-                    "on_stock": random.randint(20, 100),
+                    "on_stock": random.randint(100, 300),
                 })
 
         batch_file = os.path.join(raw_path, "inventory_stream", f"batch_{day * batches_per_day + batch_num + 1}.json")

@@ -33,6 +33,7 @@ A **retail analytics pipeline** built with **PySpark** and **MongoDB**, designed
 ---
 
 ## 📂 Project Structure
+```
 NovaRetail/
 ├── scripts/
 │ ├── data_generation.py # Script to generate or tweak input data
@@ -41,7 +42,7 @@ NovaRetail/
 ├── config.yaml # Paths, MongoDB URI, and thresholds
 ├── requirements.txt # Python dependencies
 └── data/ # Raw and curated CSV/Parquet files
----
+```
 
 ## ⚙️ Getting Started
 
@@ -58,10 +59,10 @@ git clone https://github.com/yourusername/nova-retail.git
 cd nova-retail
 python -m venv venv               # Create virtual environment
 source venv/bin/activate          # Linux/macOS
-# venv\Scripts\activate           # Windows
+#venv\Scripts\activate           # Windows
 pip install --upgrade pip
 pip install -r requirements.txt
-
+```
 Configuration
 
 Update config.yaml with your local paths and MongoDB URI.
@@ -76,6 +77,7 @@ Processed data is saved to MongoDB for analytics and reporting.
 
 Use PySpark caching and partitioning for optimal performance.
 
+```
 ⚠️ Notes
 
 Run in a fresh virtual environment to avoid dependency conflicts.
@@ -84,9 +86,11 @@ config.yaml contains sensitive info — do not commit publicly.
 
 Optimized for fast, large-scale retail analytics.
 
+```
 👤 Author
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: pravinxtha123@gmail.com
+
 
 

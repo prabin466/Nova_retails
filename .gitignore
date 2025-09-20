@@ -1,6 +1,48 @@
-.idea
+# Python
 __pycache__/
 *.pyc
-*.pkl
+*.pyo
+*.pyd
+*.env
+env/
+venv/
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints
+
+# Spark / PySpark
 *.log
-data/curated
+*.out
+*.class
+*.jar
+*.egg
+*.egg-info/
+target/
+*.parquet
+*.orc
+*.avro
+
+# Checkpoints (streaming)
+checkpoints/
+console_checkpoint/
+
+# Data
+/data/
+*/data/raw/*
+*/data/processed/*
+*/data/interim/*
+*/data/output/*
+
+# MongoDB credentials or configs
+*.json
+mongo_uri.txt
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db

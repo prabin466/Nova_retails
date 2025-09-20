@@ -1,0 +1,19 @@
+spark:
+  app_name: "NovaRetailMongoPipeline"
+  master: "local[*]"
+
+paths:
+  sales_csv: "sales_data.csv"
+  customers_csv: "customers_data.csv"
+  inventory_stream: "inventory_stream"
+
+mongodb:
+  uri: "mongodb://localhost:27017"
+  database: "retail_db"
+  collections:
+    sales: "daily_sales"
+    customers: "customers_curated"
+    stock: "Stock_risk_signal"
+
+thresholds:
+  stock_out_qty: 30

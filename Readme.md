@@ -108,18 +108,13 @@ python scripts/model_evaluate.py \
 
 
 ```
-Configuration
-
+# Configuration
 Update config.yaml with your local paths and MongoDB URI.
-
 Ensure the collections (daily_sales, customers_curated, Stock_risk_signal) exist in your database.
 
-Running the Pipeline
-
+ # Running the Pipeline
 Open pipeline.ipynb to process raw data and curate datasets.
-
 Processed data is saved to MongoDB for analytics and reporting.
-
 Use PySpark caching and partitioning for optimal performance.
 
 ```
@@ -136,6 +131,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

@@ -70,7 +70,13 @@ pip install -r requirements.txt
 
 # Install MongoDB if not already installed
 Follow instructions at: https://www.mongodb.com/docs/manual/installation/
-Run server and create database to store
+# After Installing MongoDB
+mongosh  # Start server
+mongosh --eval 'db.runCommand({ connectionStatus: 1 })'  # Check connection, should return 1
+mkdir -p mongo_data/db  # Create folder
+mongod --dbpath pathtoyourfolder/data/mongo_data/db
+
+
 
 # Run scripts
 python scripts/Data_generation.py       # Creates required folders, also can make tweaks for better data
@@ -105,6 +111,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

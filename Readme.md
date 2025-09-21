@@ -100,7 +100,7 @@ Model is trained in pipeline.ipynb and stored in data/models/stock_out_model
 
 Evaluate model through CLI
 # You can use the test data that is created through pipeline.ipynb or test with your own data.
-
+# Please use full path to your folder for consistent followups.
 python scripts/model_evaluate.py \
   --model_path file:///pathToYourFolder/data/models/stock_out_model \
   --test_path file:///pathToYourFolder/data/curated/test_inventory.parquet
@@ -131,6 +131,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

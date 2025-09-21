@@ -71,7 +71,7 @@ NovaRetail/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/nova-retail.git
+git clone https://github.com/prabin466/nova-retail.git
 cd nova-retail
 
 # Create and activate Virtual environment
@@ -131,6 +131,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

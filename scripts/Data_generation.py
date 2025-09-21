@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 import random
 
 # Create paths for data
-project_root = Path.cwd().parent
+project_root = Path.cwd()
 raw_path = os.path.join(project_root, "data", "raw")
 curated_path = os.path.join(project_root, "data", "curated")
 models_path = os.path.join(project_root, "data", "models")
@@ -101,4 +101,5 @@ for day in range(num_days):
                 f.write(json.dumps(record) + "\n")
 
 print("Inventory stream JSON files created in:", os.path.join(raw_path, "inventory_stream"))
+
 

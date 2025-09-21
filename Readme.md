@@ -1,6 +1,6 @@
 # 📊 Nova Retail Analytics Pipeline
 
-A **retail analytics pipeline** built with **PySpark** and **MongoDB**, designed to process and analyze sales, customer, and stock data. Supports **daily sales aggregation**, **moving average computations**, **RFM scoring**, and **stock-out risk detection**.
+A **retail analytics pipeline** built with **PySpark** and **MongoDB**, designed to process and analyze sales, customer, and stock data. Supports **daily sales aggregation**, **moving average computations**, **RFM scoring**, and **stock-out risk detection** with a **pre-trained Logistic Regression Model**.
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
 ![PySpark](https://img.shields.io/badge/PySpark-3.5.2-orange.svg)
@@ -30,18 +30,33 @@ A **retail analytics pipeline** built with **PySpark** and **MongoDB**, designed
 - Detects **stock-out risks** for inventory management.
 - Highlights **at-risk SKUs by store**.
 
+.
+
+### 🧪 Model Evaluation
+
+- Evaluates binary stock-out prediction using accuracy, precision, recall, F1-score, and class distribution.
+- Accepts test data and model path via CLI.
+- Outputs a tidy summary table for immediate inspection.
+
 ---
 
 ## 📂 Project Structure
 ```
 NovaRetail/
 ├── scripts/
-│ ├── data_generation.py    # Script to generate or tweak input data
-│ ├── pipeline.ipynb        # PySpark data processing and curation
-│ └── analysis.ipynb        # Analysis and insights notebook
-├── config.yaml             # Paths, MongoDB URI, and thresholds
-├── requirements.txt        # Python dependencies
-└── data/                   # Raw and curated CSV/Parquet files
+│   ├── data_generation.py        # Script to generate or tweak input data
+│   ├── pipeline.ipynb            # PySpark data processing and curation
+│   ├── analysis.ipynb            # Analysis and insights notebook
+│   └── model_evaluate.py         # CLI script to evaluate pre-trained model
+├── config.yaml                   # Paths, MongoDB URI, and thresholds
+├── requirements.txt              # Python dependencies
+├── data/
+│   ├── raw/
+│   ├── curated/
+│   │   └── test_inventory.parquet
+│   └── models/
+│       └── stock_out_model       # Pre-trained Logistic Regression model
+
 ```
 
 ## ⚙️ Getting Started
@@ -67,20 +82,30 @@ venv\Scripts\activate           # Windows
 # Upgrade pip and install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
-
+```
 # Install MongoDB if not already installed
 Follow instructions at: https://www.mongodb.com/docs/manual/installation/
 # After Installing MongoDB
-mongosh  # Start server
-mongosh --eval 'db.runCommand({ connectionStatus: 1 })'  # Check connection, should return 1
-mkdir -p mongo_data/db  # Create folder
+# Start  MongoDB server
 mongod --dbpath pathtoyourfolder/data/mongo_data/db
-
-
+# Check connection
+mongosh --eval 'db.runCommand({ connectionStatus: 1 })'  # Check connection, should return 1
 
 # Run scripts
 python scripts/Data_generation.py       # Creates required folders, also can make tweaks for better data
-Execute pipeline.ipynb and after that analysis.ipynb
+# Process, curate data and analysis
+Run pipeline.ipynb to clean , transform and assemble features
+# Model training
+Model is trained in pipeline.ipynb and stored in data/models/stock_out_model
+
+```
+Evaluate model through CLI
+# You can use the test data that is created through pipeline.ipynb or test with your own data.
+python scripts/model_evaluate.py \
+  --model_path file:///pathToYourFolder/data/models/stock_out_model \
+  --test_path file:///pathToYourFolder/data/curated/test_inventory.parquet
+
+
 
 ```
 Configuration
@@ -111,6 +136,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

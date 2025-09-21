@@ -85,17 +85,17 @@ pip install -r requirements.txt
 ```
 # Install MongoDB if not already installed
 Follow instructions at: https://www.mongodb.com/docs/manual/installation/
-# After Installing MongoDB
+### After Installing MongoDB
 # Start  MongoDB server
 mongod --dbpath pathtoyourfolder/data/mongo_data/db
 # Check connection
 mongosh --eval 'db.runCommand({ connectionStatus: 1 })'  # Check connection, should return 1
 
-# Run scripts
+### Run scripts
 python scripts/Data_generation.py       # Creates required folders, also can make tweaks for better data
 # Process, curate data and analysis
 Run pipeline.ipynb to clean , transform and assemble features
-# Model training
+### Model training
 Model is trained in pipeline.ipynb and stored in data/models/stock_out_model
 
 ```
@@ -136,6 +136,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 

@@ -82,25 +82,25 @@ venv\Scripts\activate           # Windows
 # Upgrade pip and install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
-```
+
 # Install MongoDB if not already installed
 Follow instructions at: https://www.mongodb.com/docs/manual/installation/
-### After Installing MongoDB
+# After Installing MongoDB
 # Start  MongoDB server
 mongod --dbpath pathtoyourfolder/data/mongo_data/db
 # Check connection
 mongosh --eval 'db.runCommand({ connectionStatus: 1 })'  # Check connection, should return 1
 
-### Run scripts
+# Run scripts
 python scripts/Data_generation.py       # Creates required folders, also can make tweaks for better data
 # Process, curate data and analysis
 Run pipeline.ipynb to clean , transform and assemble features
-### Model training
+# Model training
 Model is trained in pipeline.ipynb and stored in data/models/stock_out_model
 
-```
 Evaluate model through CLI
 # You can use the test data that is created through pipeline.ipynb or test with your own data.
+
 python scripts/model_evaluate.py \
   --model_path file:///pathToYourFolder/data/models/stock_out_model \
   --test_path file:///pathToYourFolder/data/curated/test_inventory.parquet
@@ -136,6 +136,7 @@ Optimized for fast, large-scale retail analytics.
 
 Prabin Shrestha – Data Science & Big Data Enthusiast
 Email: sthprabin46@gmail.com
+
 
 
 
